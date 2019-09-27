@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "2gis-maps": "^3.5.12",
     "react": "16.9.0",
     "react-art": "16.9.0",
     "react-dom": "16.9.0",
