@@ -1,5 +1,6 @@
 // import {onSnapshot} from "mobx-state-tree"
-import {RootStore, RootStoreModel} from "./root-store"
+// @ts-ignore
+import {RootStore, RootStoreModel} from './root-store'
 import {Environment} from "./environment"
 // import {load, save} from "components/storage";
 import Strapi from 'strapi-sdk-javascript';

@@ -1,26 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9fe0aff1-6ca7-4c29-815d-f470b99329d4" name="Default Changelist" comment="EdemEdim name">
-      <change afterPath="$PROJECT_DIR$/packages/components/src/app/environment.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/app/root-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/app/setup-root-store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/router/Routes.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/router/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/router/index.web.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/router/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/screens/route.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/screens/routestop.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/sellerpoints.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/user.ts" afterDir="false" />
+    <list default="true" id="9fe0aff1-6ca7-4c29-815d-f470b99329d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/content-store/array-content-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/content-store/frozen-content-store.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/components/src/stores/content-store/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/src/models/job.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/components/src/models/new-job.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/components/src/stores/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/components/src/stores/user.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,10 +22,22 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/packages/components/src/stores/user.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="28" selection-start-line="28" selection-end-line="28" />
+                <state relative-caret-position="270">
+                  <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#56#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/packages/components/src/stores/content-store/index.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="165">
+                  <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+                  <folding>
+                    <element signature="e#0#177#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -118,7 +117,7 @@
             <entry file="file://$PROJECT_DIR$/packages/components/src/App.tsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
-                  <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+                  <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#51#0" expanded="true" />
                   </folding>
@@ -162,8 +161,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
@@ -260,6 +259,7 @@
         <option value="$PROJECT_DIR$/packages/components/src/router/layout.tsx" />
         <option value="$PROJECT_DIR$/packages/components/src/app/setup-root-store.ts" />
         <option value="$PROJECT_DIR$/packages/components/src/App.tsx" />
+        <option value="$PROJECT_DIR$/packages/components/src/stores/content-store/index.ts" />
         <option value="$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx" />
         <option value="$PROJECT_DIR$/packages/components/src/stores/user.ts" />
       </list>
@@ -284,10 +284,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="-1854" />
-    <option name="y" value="-613" />
-    <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="x" value="-1920" />
+    <option name="y" value="-725" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -334,14 +334,6 @@
               <item name="packages" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="edemedim-app" type="b2602c69:ProjectViewProjectNode" />
-              <item name="edemedim-app" type="462c0819:PsiDirectoryNode" />
-              <item name="packages" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="router" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,6 +351,15 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="stores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="edemedim-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="edemedim-app" type="462c0819:PsiDirectoryNode" />
+              <item name="packages" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stores" type="462c0819:PsiDirectoryNode" />
+              <item name="content-store" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="edemedim-app" type="b2602c69:ProjectViewProjectNode" />
@@ -501,7 +502,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="App&#9;FILE&#9;file:///Users/vadkou/Development/Wave909/Win/edemedim-app/packages/components/src/App.tsx" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569622948162" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569624326065" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/mobile/android/app/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -513,8 +514,8 @@
       <recent name="$PROJECT_DIR$/packages/components/src/router" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/packages/components/src/app" />
       <recent name="$PROJECT_DIR$/packages/components/src/stores" />
+      <recent name="$PROJECT_DIR$/packages/components/src/app" />
       <recent name="$PROJECT_DIR$/packages/components/src" />
     </key>
   </component>
@@ -576,12 +577,20 @@
       <updated>1569179954777</updated>
       <workItem from="1569179956445" duration="1795000" />
       <workItem from="1569184408643" duration="1365000" />
-      <workItem from="1569603857066" duration="14951000" />
+      <workItem from="1569603857066" duration="16331000" />
     </task>
+    <task id="LOCAL-00001" summary="Basic Model stores">
+      <created>1569622987436</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569622987436</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18111000" />
+    <option name="totallyTimeSpent" value="19491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-725" width="1920" height="1080" extended-state="0" />
@@ -652,7 +661,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="EdemEdim name" />
-    <option name="LAST_COMMIT_MESSAGE" value="EdemEdim name" />
+    <MESSAGE value="Basic Model stores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic Model stores" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Programs/openapi/kek/models/job.ts">
@@ -777,16 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="9" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="9" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packages/components/src/models/users-permissions-user.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -940,7 +940,7 @@
     <entry file="file://$PROJECT_DIR$/packages/components/src/App.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
+          <caret line="26" column="19" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="19" />
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
@@ -957,20 +957,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/packages/components/src/models/users-permissions-user.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/packages/components/src/screens/routetickets.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        <state relative-caret-position="120">
+          <caret line="8" column="54" selection-start-line="8" selection-start-column="54" selection-end-line="8" selection-end-column="54" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/packages/components/src/stores/content-store/array-content-store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/components/src/stores/content-store/frozen-content-store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packages/components/src/stores/content-store/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/packages/components/src/stores/user.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        <state relative-caret-position="270">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>

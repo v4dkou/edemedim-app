@@ -6,8 +6,8 @@ import {useMst} from '../App';
 export const RouteTicketsScreen = observer(() => {
     const { getUser, isLoading, username } = useMst(({userStore: store}) => ({
         getUser: store.getUser,
-        routeTickets: store.routeTickets,
-        username: store.username
+        username: store.user.data && store.user.data.username,
+        routeTickets: store.user.data && store.user.data.routetickets
     }));
 
     useEffect(() => {
