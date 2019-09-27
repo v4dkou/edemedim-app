@@ -11,7 +11,7 @@ import {
 
 import Strapi from 'strapi-sdk-javascript';
 
-const strapi = new Strapi('http://localhost:1337');
+const strapi = new Strapi('http://157.245.70.2:1337');
 
 import { AppHeader } from './AppHeader'
 import {types} from 'mobx-state-tree';
@@ -61,17 +61,18 @@ const Counter = observer(() => {
 })
 
 export function App() {
+    // @ts-ignore
     return (<Provider value={rootStore}>
             <Main/>
         </Provider>)
 }
 
 export function Main() {
-    const [jobs, setJobs] = useState([{} as Job]);
+    const [jobs, setJobs] = useState([{}]);
 
     useEffect(() => {
         const fetch = async () => {
-            const result = await strapi.getEntries('jobs') as Job[];
+            const result = await strapi.getEntries('jobs');
             setJobs(result);
         }
         fetch()
@@ -112,7 +113,9 @@ export function Main() {
                 <Text style={styles.highlight}>.native</Text>, etc).
               </Text>
             </View>
-              {jobs.map(job => <Text>{job.vacancy}</Text>)}
+              {jobs.map(job => <Text>{
+                  // @ts-ignore
+                  job.vacancy}</Text>)}
 
               <Counter />
           </View>
