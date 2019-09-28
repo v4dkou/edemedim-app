@@ -87,3 +87,39 @@
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: "RussianRailG-Reg";
+    src: url("../../../../assets/RussianRailG-Reg.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "RussianRailGPro-Bold";
+    src: url("../../../../assets/RussianRailGPro-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RussianRailGPro-Medium";
+    src: url("../../../../assets/RussianRailGPro-Medium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RussianRailGPro-Extended";
+    src: url("../../../../assets/RussianRailGPro-Extended.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "RussianRailGPro-ExtendedBold";
+    src: url("../../../../assets/RussianRailGPro-ExtendedBold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

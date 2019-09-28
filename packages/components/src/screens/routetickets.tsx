@@ -37,7 +37,7 @@ export const RouteTicketsScreen = observer(({ history }) => {
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
                             <Text style={{fontFamily: 'RussoOne-Regular'}}>Добро пожаловать, {username}!</Text>
-                            <Text style={{fontFamily: 'Russo'}}>
+                            <Text style={{fontFamily: 'RussoOne-Regular'}}>
                                 Выберите поездку, чтобы заказать еду <Text style={styles.highlight}>packages/components/App.tsx</Text> to change this
                                 screen and then come back to see your edits (in the phone or the browser).
                             </Text>
