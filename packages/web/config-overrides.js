@@ -11,13 +11,21 @@ const appIncludes = [
   resolveApp('../components/src'),
 ]
 
+const cssLoaderConfiguration = {
+    test: /\.(css)$/,
+    include: [
+        path.resolve(__dirname, "not_exist_path")
+    ],
+    loader: "style!css"
+};
+
 module.exports = function override(config, env) {
   // allow importing from outside of src folder
   config.resolve.plugins = config.resolve.plugins.filter(
     plugin => plugin.constructor.name !== 'ModuleScopePlugin'
   )
   config.module.rules[0].include = appIncludes
-  config.module.rules[1] = null
+  config.module.rules[1] = cssLoaderConfiguration
   config.module.rules[2].oneOf[1].include = appIncludes
   config.module.rules[2].oneOf[1].options.plugins = [
     require.resolve('babel-plugin-react-native-web'),

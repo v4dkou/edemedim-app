@@ -17,7 +17,7 @@ const RouteSheet = (props: {onHeaderPress: () => any} ) => <View style={styles.s
     </TouchableWithoutFeedback>
     <Text style={styles.sectionTitle}>Новосибирск – Казань</Text>
     <Text style={styles.sectionDescription}>
-        <Text style={styles.highlight}>Нет</Text> заказов
+        Нет заказов
     </Text>
 </View>
 
