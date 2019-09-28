@@ -4,4 +4,5 @@ module.exports = {
       sourceDir: './packages/mobile/android',
     },
   },
+  assets: ['./assets']
 };

@@ -5,7 +5,7 @@ import {
     ScrollView,
     StatusBar,
     StyleSheet,
-    Text,
+    Text, TextComponent,
     TouchableOpacity,
     View,
 } from 'react-native';
@@ -36,16 +36,20 @@ export const RouteTicketsScreen = observer(({ history }) => {
                     style={styles.scrollView}>
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Добро пожаловать, {username}!</Text>
-                            <Text style={styles.sectionDescription}>
+                            <Text style={{fontFamily: 'RussoOne-Regular'}}>Добро пожаловать, {username}!</Text>
+                            <Text style={{fontFamily: 'Russo'}}>
                                 Выберите поездку, чтобы заказать еду <Text style={styles.highlight}>packages/components/App.tsx</Text> to change this
                                 screen and then come back to see your edits (in the phone or the browser).
                             </Text>
                         </View>
                         {routeTickets && routeTickets.map((ticket: Routeticket) =>
                             <TouchableOpacity onPress={() => routing(history).toRouteScreen(ticket.route)}>
-                                <View style={styles.sectionContainer}>
-                                    <Text style={styles.sectionTitle}>Новосибирск – Казань</Text>
+                                <View style={styles.sectionContainer} key={ticket.id}>
+                                    <Text style={{fontFamily: 'RussianRailG-Reg', fontSize: 24}}>Новосибирск – Казань</Text>
+                                    <Text style={{fontFamily: 'RussianRailGPro-Bold', fontSize: 24}}>Новосибирск – Казань</Text>
+                                    <Text style={{fontFamily: 'RussianRailGPro-Extended', fontSize: 24}}>Новосибирск – Казань</Text>
+                                    <Text style={{fontFamily: 'RussianRailGPro-ExtendedBold', fontSize: 24}}>Новосибирск – Казань</Text>
+                                    <Text style={{fontFamily: 'RussianRailGPro-Medium', fontSize: 24}}>Новосибирск – Казань</Text>
                                     <Text style={styles.sectionDescription}>
                                         <Text style={styles.highlight}>Нет</Text> заказов
                                     </Text>
@@ -77,6 +81,7 @@ const styles = StyleSheet.create({
     sectionTitle: {
         fontSize: 24,
         fontWeight: '600',
+        fontFamily: 'RussoOne-Regular',
         color: 'black',
     },
     sectionDescription: {

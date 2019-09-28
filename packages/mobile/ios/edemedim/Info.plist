@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,5 +53,23 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>RussianRail-G-Pro-Bold.otf</string>
+		<string>RussianRail-G-Pro-Extend.otf</string>
+		<string>RussianRail-G-Pro-Extended-Bold.otf</string>
+		<string>RussianRail-G-Pro-Medium.otf</string>
+		<string>RussianRail-G-Regular.otf</string>
+		<string>RussoOne-Regular.ttf</string>
+		<string>RussianRailGPro-Bold.otf</string>
+		<string>RussianRailGPro-Extend.otf</string>
+		<string>RussianRailGPro-Extended-Bold.otf</string>
+		<string>RussianRailGPro-Medium.otf</string>
+		<string>RussianRailGRegular.otf</string>
+		<string>RussianRailG-Regular.otf</string>
+		<string>RussianRailG-Reg.otf</string>
+		<string>RussianRailGPro-Extended.otf</string>
+		<string>RussianRailGPro-ExtendedBold.otf</string>
+	</array>
 </dict>
 </plist>

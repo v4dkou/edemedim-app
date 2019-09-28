@@ -9,6 +9,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 const appIncludes = [
   resolveApp('src'),
   resolveApp('../components/src'),
+  resolveApp('../../assets'),
 ]
 
 const cssLoaderConfiguration = {
@@ -34,6 +35,22 @@ module.exports = function override(config, env) {
           .filter((plugin) => !(new Set(['react-native-gesture-handler', 'react-native-svg']).has(plugin)))
   )
   config.module.rules = config.module.rules.filter(Boolean)
+
+  config.module.rules.push({
+      test: /\.ttf$/,
+      use: [
+          {
+              loader: 'ttf-loader',
+              options: {
+                  name: './[hash].[ext]',
+              },
+          },
+      ],
+      include: [
+          path.resolve(appDirectory, './src/assets'),
+          path.resolve(appDirectory, './assets'),
+      ],
+  })
   config.plugins.push(
     new webpack.DefinePlugin({ __DEV__: env !== 'production' })
   )
