@@ -21,7 +21,10 @@ module.exports = function override(config, env) {
   config.module.rules[2].oneOf[1].include = appIncludes
   config.module.rules[2].oneOf[1].options.plugins = [
     require.resolve('babel-plugin-react-native-web'),
-  ].concat(config.module.rules[2].oneOf[1].options.plugins)
+  ].concat(
+      config.module.rules[2].oneOf[1].options.plugins
+          .filter((plugin) => !(new Set(['react-native-gesture-handler', 'react-native-svg']).has(plugin)))
+  )
   config.module.rules = config.module.rules.filter(Boolean)
   config.plugins.push(
     new webpack.DefinePlugin({ __DEV__: env !== 'production' })

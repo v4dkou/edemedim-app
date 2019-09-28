@@ -1,6 +1,6 @@
 import {observer} from 'mobx-react';
 import {
-    Button,
+    Alert,
     SafeAreaView,
     ScrollView,
     StatusBar,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     sectionContainer: {
         marginTop: 24,
         paddingHorizontal: 24,
-        marginTop: 16
+        marginBottom: 16
     },
     sectionTitle: {
         fontSize: 24,

@@ -9,7 +9,7 @@ import {
   types
 } from "mobx-state-tree";
 
-interface IContentStoreActions<DataType, ErrorType> extends ModelActions {
+export interface IContentStoreActions<DataType, ErrorType> extends ModelActions {
   setLoading(): void
 
   setError(error: ErrorType): void

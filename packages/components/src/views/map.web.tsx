@@ -4,12 +4,14 @@ import DG from '2gis-maps';
 
 export class RouteMap extends React.Component {
     public componentDidMount() {
-        let map;
+        let map: any;
 
         DG.then(function () {
             map = DG.map('map', {
                 center: [54.98, 65],
-                zoom: 5
+                zoom: 5,
+                zoomControl: false,
+                fullscreenControl: false
             });
 
             const route = {
