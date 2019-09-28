@@ -16,7 +16,8 @@
   "dependencies": {
     "components": "0.0.1",
     "react": "16.9.0",
-    "react-native": "0.61.0-rc.3"
+    "react-native": "0.61.0-rc.3",
+    "react-native-webview": "^7.2.7"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",

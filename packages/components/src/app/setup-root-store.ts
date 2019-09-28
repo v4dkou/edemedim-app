@@ -58,7 +58,7 @@ export async function createEnvironment() {
 
     env.strapi = new Strapi('http://157.245.70.2:1337');
 
-    env.strapi.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTY5NjA0MDc2LCJleHAiOjE1NzIxOTYwNzZ9.J4krvKJz2uljmrq3zKKMx11VPfbE4YlcvF3AD355hg8")
+    env.strapi.setToken("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTY5NjA0MDc2LCJleHAiOjE1NzIxOTYwNzZ9.J4krvKJz2uljmrq3zKKMx11VPfbE4YlcvF3AD355hg8", true)
 
     return env
 }

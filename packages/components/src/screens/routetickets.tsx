@@ -1,12 +1,24 @@
 import {observer} from 'mobx-react';
-import {Button, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import {
+    Button,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
+} from 'react-native';
 import React, {useEffect} from 'react';
 import {useMst} from '../App';
+import {Routeticket} from '../models';
 
-export const RouteTicketsScreen = observer(() => {
-    const { getUser, isLoading, username } = useMst(({userStore: store}) => ({
+export const RouteTicketsScreen = observer(({ history }) => {
+    const { getUser, isFetching, error, username, routeTickets } = useMst(({userStore: store}) => ({
         getUser: store.getUser,
         username: store.user.data && store.user.data.username,
+        isFetching: store.user.isFetching,
+        error: store.user.error,
         routeTickets: store.user.data && store.user.data.routetickets
     }));
 
@@ -23,26 +35,21 @@ export const RouteTicketsScreen = observer(() => {
                     style={styles.scrollView}>
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Code sharing using Kek</Text>
+                            <Text style={styles.sectionTitle}>Добро пожаловать, {username}!</Text>
                             <Text style={styles.sectionDescription}>
-                                Edit <Text style={styles.highlight}>packages/components/App.tsx</Text> to change this
+                                Выберите поездку, чтобы заказать еду <Text style={styles.highlight}>packages/components/App.tsx</Text> to change this
                                 screen and then come back to see your edits (in the phone or the browser).
                             </Text>
                         </View>
-                        <View style={styles.sectionContainer}>
-                            <Text style={styles.sectionTitle}>Web support via react-native-web</Text>
-                            <Text style={styles.sectionDescription}>
-                                Run <Text style={styles.highlight}>yarn workspace web start</Text> to
-                                open this app in the browser.
-                            </Text>
-                            <Text style={styles.sectionDescription}>
-                                It will share the same code from mobile, unless you create platform-specific files
-                                using the <Text style={styles.highlight}>.web.tsx</Text> extension
-                                (also supports <Text style={styles.highlight}>.android</Text>,{' '}
-                                <Text style={styles.highlight}>.ios</Text>,{' '}
-                                <Text style={styles.highlight}>.native</Text>, etc).
-                            </Text>
-                        </View>
+                        {routeTickets && routeTickets.map((ticket: Routeticket) =>
+                            <TouchableOpacity onPress={() => history.push(`/route`)}>
+                                <View style={styles.sectionContainer}>
+                                    <Text style={styles.sectionTitle}>Новосибирск – Казань</Text>
+                                    <Text style={styles.sectionDescription}>
+                                        <Text style={styles.highlight}>Нет</Text> заказов
+                                    </Text>
+                                </View>
+                            </TouchableOpacity>)}
                     </View>
                 </ScrollView>
             </SafeAreaView>
@@ -62,8 +69,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     sectionContainer: {
-        marginTop: 32,
+        marginTop: 24,
         paddingHorizontal: 24,
+        marginTop: 16
     },
     sectionTitle: {
         fontSize: 24,

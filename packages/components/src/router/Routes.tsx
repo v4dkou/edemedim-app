@@ -8,8 +8,7 @@ export const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/tickets" component={RouteTicketsScreen} />
+        <Route exact path="/" component={RouteTicketsScreen} />
         <Route exact path="/route" component={RouteScreen} />
         {/*<Route*/}
           {/*exact*/}
