@@ -12,6 +12,7 @@ import {
 import React, {useEffect} from 'react';
 import {useMst} from '../App';
 import {Routeticket} from '../models';
+import {routing} from '../router/Routes';
 
 export const RouteTicketsScreen = observer(({ history }) => {
     const { getUser, isFetching, error, username, routeTickets } = useMst(({userStore: store}) => ({
@@ -42,7 +43,7 @@ export const RouteTicketsScreen = observer(({ history }) => {
                             </Text>
                         </View>
                         {routeTickets && routeTickets.map((ticket: Routeticket) =>
-                            <TouchableOpacity onPress={() => history.push(`/route`)}>
+                            <TouchableOpacity onPress={() => routing(history).toRouteScreen(ticket.route)}>
                                 <View style={styles.sectionContainer}>
                                     <Text style={styles.sectionTitle}>Новосибирск – Казань</Text>
                                     <Text style={styles.sectionDescription}>

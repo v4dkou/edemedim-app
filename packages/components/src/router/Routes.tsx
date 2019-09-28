@@ -1,21 +1,58 @@
 import React from "react";
 import { RouteScreen } from "../screens/route";
-import { Route, Router, Switch } from "./index";
-import {Main} from './layout';
+// @ts-ignore
+import Navigator from 'react-native-easy-router';
 import {RouteTicketsScreen} from '../screens/routetickets';
 
-export const Routes = () => {
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={RouteTicketsScreen} />
-        <Route exact path="/route" component={RouteScreen} />
-        {/*<Route*/}
-          {/*exact*/}
-          {/*path="/workout/:year/:month/:day"*/}
-          {/*component={CurrentWorkout}*/}
-        {/*/>*/}
-      </Switch>
-    </Router>
-  );
-};
+let navigator: any | undefined;
+
+const backHandler = (navigator: Navigator) => {
+    const {screen} = navigator.stack[navigator.stack.length - 1]
+    if(screen === 'RouteScreen') {
+        navigator.push('RouteTicketsScreen', {}, {animation: 'left', duration: 200, easing: 'ease-out'})
+        return true
+    } else if(screen === 'RouteTicketsScreen'){
+        return false
+    } else {
+        navigator.pop()
+        return true
+    }
+}
+
+// Map screen should always be the first, so that it's always initialized in the background for fluid UI.
+export const Routes = () =>
+    <Navigator
+        screens={{ RouteTicketsScreen, RouteScreen }}
+        initialStack={['RouteScreen', 'RouteTicketsScreen']}
+        navigatorRef={(ref: any) => {
+            navigator = ref
+        }}
+        backHandler={backHandler}/>
+
+// goTo(history).routeScreen()
+
+export const routing = (history?: any) => {
+    if(!history && !navigator) {
+        throw new Error('Not clear which navigation to use')
+    }
+
+    const toRouteTicketsScreen = () => {
+        navigator.resetFrom(navigator.stack[0].id, 'RouteTicketsScreen')
+    }
+
+    const toRouteScreen = (routeId: string) => {
+        const screen = navigator.stack[0]
+        if(screen.screen === 'RouteScreen') {
+            navigator.popTo(screen.id, {animation: 'left', duration: 200, easing: 'ease-out'})
+            // TODO: send new routeId to an existing map screen
+        } else {
+            navigator.reset('RouteScreen', { routeId })
+        }
+        // navigator.popTo('RouteScreen', {animation: 'left', duration: 250, easing: 'ease-out'})
+    }
+
+    return {
+        toRouteTicketsScreen,
+        toRouteScreen
+    }
+}

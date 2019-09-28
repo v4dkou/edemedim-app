@@ -15,23 +15,23 @@
 
 
 /**
- * 
+ *
  * @export
  * @interface Routeticket
  */
 export interface Routeticket {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Routeticket
      */
     id: string;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Routeticket
      */
-    route?: object;
+    route: string;
 }
 
 

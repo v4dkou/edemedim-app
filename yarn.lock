@@ -9273,7 +9273,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.0, prop-types@^15.6.1, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9539,6 +9539,21 @@ react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is
   version "16.9.0"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
+
+react-native-animatable-promise@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-animatable-promise/-/react-native-animatable-promise-1.2.4.tgz#3ec9c24eeb7f95d85713637664089c89ba713593"
+  integrity sha512-jvAIrLXhqWylRI3yMtdLmzkos2xvECXmnNDDeOkibviLjYLQY6lgA53fZGwGOg77wUmb8A3IDmIIbGriKaS6/w==
+  dependencies:
+    prop-types "^15.5.10"
+
+react-native-easy-router@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-easy-router/-/react-native-easy-router-3.0.2.tgz#bb36e5bd8d1a6a6700e2bc19562c0fe27e138c2c"
+  integrity sha512-ibFIweLTGtsQ2ZSJ0GsiSTqFcxa+Ifc75t7MJGnEU291Nc3m3cqE0b6b+Et4GoxjEwJL1/FWiKNfDwFV0Gd9YQ==
+  dependencies:
+    react-native-animatable-promise "^1.2.4"
+    uuid "^3.3.2"
 
 react-native-gesture-handler@^1.4.1:
   version "1.4.1"

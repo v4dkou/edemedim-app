@@ -35,7 +35,7 @@ const AnimatedRoute = (props: RouteProps) => (
 export const Routes = () => {
   return (
     <Router>
-      <AnimatedSwitch animationClassName="fadeLeft"
+      <AnimatedSwitch animationClassName="page"
                       animationTimeout={300}>
         <AnimatedRoute exact path="/" component={RouteTicketsScreen} />
         <AnimatedRoute exact path="/route" component={RouteScreen} />
@@ -48,3 +48,18 @@ export const Routes = () => {
     </Router>
   );
 };
+
+export const routing = (history?: any) => {
+    if(!history) {
+        throw new Error('react-router-dom is not connected to the current route')
+    }
+
+    const toRouteTicketsScreen = () => history.push('/')
+
+    const toRouteScreen = (routeId: string) => history.push('/route')
+
+    return {
+        toRouteTicketsScreen,
+        toRouteScreen
+    }
+}
