@@ -19,7 +19,7 @@ import {getDefaultRuPlural} from '../utils/get-plural-type';
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
 
 // fixme: switch to FlatList
-const RouteTicketsList = observer(({history}) => {
+export const RouteTicketsList = observer(({history}) => {
     const { getUser, isFetching, error, username, routeTickets } = useMst(({userStore: store}) => ({
         getUser: store.getUser,
         username: store.user.data && store.user.data.username,

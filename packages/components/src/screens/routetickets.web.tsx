@@ -29,7 +29,7 @@ const RouteTicketsList = observer(({history}) => {
     useEffect(() => {
         getUser()
     }, [])
-    console.error('AAAAAAAAAAAAAa');
+
     return <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>
@@ -68,6 +68,7 @@ export const _RouteTicketsScreen = observer(({ history }) => {
                         .map(item => <MenuItem title={item} onPress={() => {}}/>)}
                 </View>
             </ImageBackground>
+            <RouteTicketsList history={history}/>
         </>
     );
 })
