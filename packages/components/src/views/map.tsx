@@ -5,9 +5,8 @@ export const RouteMap = () => {
     return (
         <WebView
             source={{
-                uri: 'https://codepen.io/Feodor_Evdokimov/full/YoOoPv',
+                uri: 'https://reverse.wave909.com/mapbridge',
             }}
-            injectedJavaScript={'document.getElementById(\'main-header\').style = \'display: none;\''}
             startInLoadingState={true}
         />
     );

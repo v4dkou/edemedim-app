@@ -15,29 +15,43 @@
 
 
 /**
- * 
+ *
  * @export
  * @interface Orderitem
  */
 export interface Orderitem {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Orderitem
      */
     id: string;
     /**
-     * 
+     *
      * @type {number}
      * @memberof Orderitem
      */
     amount: number;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Orderitem
      */
     pointitem?: object;
+
+    /**
+     *
+     * @type {boolean}
+     * @memberof Orderitem
+     */
+    isComplex: boolean;
+
+    /**
+     *
+     * @type {boolean}
+     * @memberof Orderitem
+     */
+    paid: boolean
 }
 
 

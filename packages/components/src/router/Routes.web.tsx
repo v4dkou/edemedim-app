@@ -7,6 +7,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {RouteProps} from 'react-router';
 import "./style.css";
 import {ElementsScreen} from '../screens/elements';
+import {MapBridge} from '../screens/mapbridge.web';
 
 const AnimatedSwitch = (props: { animationClassName: string, animationTimeout: number, children: JSX.Element[] }) => (
     <Route render={({ location }) => (
@@ -41,6 +42,7 @@ export const Routes = () => {
         <AnimatedRoute exact path="/" component={RouteTicketsScreen} />
         <AnimatedRoute exact path="/route" component={RouteScreen} />
       <AnimatedRoute exact path="/elements" component={ElementsScreen} />
+      <AnimatedRoute exact path="/mapbridge" component={MapBridge} />
 
           {/*<Route*/}
           {/*exact*/}

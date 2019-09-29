@@ -15,31 +15,31 @@
 
 
 /**
- * 
+ *
  * @export
  * @interface Routestoporder
  */
 export interface Routestoporder {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Routestoporder
      */
     id: string;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Routestoporder
      */
     orderitems?: object;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Routestoporder
      */
     status?: RoutestoporderStatusEnum;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Routestoporder
      */

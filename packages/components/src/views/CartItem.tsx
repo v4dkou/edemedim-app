@@ -1,47 +1,32 @@
-import React, { Component } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
-import {Item, Orderitem} from '../models';
+import React, {Component} from "react";
+import {Image, StyleSheet, Text, View} from "react-native";
+import {Item, Orderitem, Routestoporder, RoutestoporderStatusEnum, Seller} from '../models';
+import {PointitemDisplay} from './PointitemCard';
 
-interface ComplexItemDisplay {
+export interface SectionDisplay {
+    name: string,
+    variants: string[]
+}
+
+export interface ComplexItemDisplay {
+    isComplex: true,
     image: string,
-    title: "Завтрак Короля",
-    sellerName: 'ООО "Лабеан Фуд"',
+    title: string,
+    sellerName: string,
     arrives: {
-        when: "21:32",
-        where: "Екатеринбург"
+        when: string,
+        where: string
     },
     prices: {
-        min: 349,
-        max: 439
+        min: number,
+        max: number
     },
-    price: 359,
-        rating: {
-    value: 3.4,
-        votes: "1000+"
+    cost: number,
+    rating: {
+        value: number,
+        votes: string
     },
-    sections: [
-        {
-            name: "Каша",
-            variants: ["манная", "овсяная", "гречневая", "перловая"]
-        },
-        {
-            name: "Глазунья",
-            variants: [
-                "с грибами",
-                "с лисичками",
-                "с беконом",
-                "с ветчиной и сыром"
-            ]
-        },
-        {
-            name: "Десерт",
-            variants: ["круасан", "блинчики с вареньем", "торт “Наполеон”"]
-        },
-        {
-            name: "Напиток",
-            variants: ["чай", "кофе", "морс", "сок"]
-        }
-    ]
+    sections: SectionDisplay[]
 }
 
 interface ComplexItemProps {
@@ -70,7 +55,9 @@ class ComplexItem extends Component<ComplexItemProps> {
 }
 
 
-type OrderitemDisplay = Orderitem & Item
+type OrderitemDisplay = Orderitem & PointitemDisplay & Item & {
+    isComplex: false
+}
 
 interface SimpleItemProps {
     item: OrderitemDisplay
@@ -91,22 +78,27 @@ class SimpleItem extends Component<SimpleItemProps> {
   }
 }
 
-class CartSellerItem extends Component {
+export type CartItemDisplay = ComplexItemDisplay | OrderitemDisplay
+
+interface CartSellerItemProps {
+    item: CartItemDisplay
+    paid: boolean
+}
+
+class CartSellerItem extends Component<CartSellerItemProps> {
   render() {
     const { item, paid } = this.props;
-
-    const ItemComponent = item.isComplex ? ComplexItem : SimpleItem;
 
     const priceStyle = !paid ? { color: "#E21A1A" } : {};
 
     return (
       <View style={styles.cartItemContainer}>
-        <ItemComponent item={item} />
+        {item.isComplex ? <ComplexItem item={item} /> : <SimpleItem item={item} />}
 
         <View style={styles.cartItemActions}>
           <Text style={[styles.text, styles.cartRemoveText]}>удалить</Text>
           <Text style={[styles.text, styles.cartItemPrice, priceStyle]}>
-            {item.price} р.
+            {item.cost} р.
           </Text>
         </View>
       </View>
@@ -114,20 +106,32 @@ class CartSellerItem extends Component {
   }
 }
 
-export default class CartItem extends Component {
+export interface RoutestoporderDisplay {
+    items: CartItemDisplay[]
+    status: RoutestoporderStatusEnum
+    total: string
+    seller: Seller
+}
+
+interface CartItemProps {
+    order: RoutestoporderDisplay
+}
+
+export default class CartItem extends Component<CartItemProps> {
   render() {
-    const { items, seller, paid, total } = this.props.cartItem;
+    const { items, seller, status, total } = this.props.order;
+    const paid = status === RoutestoporderStatusEnum.Paid
 
     return (
       <View style={styles.container}>
         <View style={styles.sellerBlock}>
-          <Image style={styles.sellerImage} source={{ uri: seller.image }} />
+          <Image style={styles.sellerImage} source={{ uri: seller.logo }} />
           <Text style={[styles.text, styles.sellerName]}>{seller.title}</Text>
         </View>
 
         <View style={styles.sellerOrderItems}>
           {items.map(item => (
-            <CartSellerItem item={item} paid={paid} />
+            <CartSellerItem item={item} paid={paid}/>
           ))}
         </View>
 
@@ -288,5 +292,11 @@ const styles = StyleSheet.create({
   complexItemWeight: {
     fontSize: 18,
     fontFamily: "RussianRailGPro-Extended",
-  }
+  },
+    cartItemContainer: {
+
+    },
+    sellerOrderItems: {
+
+    }
 });

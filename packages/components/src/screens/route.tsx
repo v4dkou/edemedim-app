@@ -32,8 +32,8 @@ const _RouteScreen = observer(() => {
             <RouteMap/>
             <BottomSheet
                 ref={bottomSheet}
-                initialSnap = {2}
-                snapPoints = {['95%', 300, 50]}
+                initialSnap = {1}
+                snapPoints = {['50%', 50]}
                 renderContent = {() => <RouteSheet onHeaderPress={openHalfpoint}/>}
             />
         </View>

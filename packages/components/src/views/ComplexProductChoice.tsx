@@ -10,7 +10,8 @@ import {
 
 
 interface ComplexProductSelectProps {
-    options: any
+    section: any
+    opacity: number
 }
 
 interface ComplexProductSelectState {
@@ -18,8 +19,9 @@ interface ComplexProductSelectState {
     selected: number
 }
 
-class ComplexProductSection extends Component {
+class ComplexProductSection extends Component<ComplexProductSelectProps, ComplexProductSelectState> {
   state = {
+    count: 0,
     selected: 0
   };
 
@@ -87,8 +89,19 @@ class ComplexProductSection extends Component {
   }
 }
 
-export default class ComplexProductChoice extends Component {
+interface ComplexProductChoiceProps {
+    product: any
+}
+
+interface ComplexProductChoiceState {
+    count: number,
+    selected: any,
+    ordered: boolean
+}
+
+export default class ComplexProductChoice extends Component<ComplexProductChoiceProps, ComplexProductChoiceState> {
   state = {
+    count: 0,
     selected: {},
     ordered: false
   };
@@ -101,7 +114,7 @@ export default class ComplexProductChoice extends Component {
     this.setState({ count: Math.max(this.state.count - 1, 0) });
   };
 
-  onSetSelected = selected => {
+  onSetSelected = (selected: boolean) => {
     this.setState({ selected });
   };
 
@@ -141,7 +154,7 @@ export default class ComplexProductChoice extends Component {
               </Text>
             </View>
 
-            {this.props.product.sections.map(section => (
+            {this.props.product.sections.map((section: any) => (
               <ComplexProductSection
                 key={section.name}
                 section={section}
@@ -248,7 +261,7 @@ const styles = StyleSheet.create({
   optionCirle: {
     width: 10,
     height: 10,
-    borderRadius: "50%",
+    borderRadius: 50,
     marginRight: 7
   },
   sectionContainer: {
