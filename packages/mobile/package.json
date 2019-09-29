@@ -11,7 +11,7 @@
     "start": "concurrently \"npm run compile -- -w\" \"react-native start\"",
     "studio": "studio android",
     "test": "jest",
-    "xcode": "open ios/myprojectname.xcworkspace"
+    "xcode": "open ios/edemedim.xcworkspace"
   },
   "dependencies": {
     "components": "0.0.1",

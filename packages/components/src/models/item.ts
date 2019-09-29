@@ -15,49 +15,61 @@
 
 
 /**
- * 
+ *
  * @export
  * @interface Item
  */
 export interface Item {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Item
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Item
      */
     title: string;
     /**
-     * 
+     *
+     * @type {string}
+     * @memberof Item
+     */
+    subtitle: string;
+    /**
+     *
+     * @type {string}
+     * @memberof Item
+     */
+    subtitleLabel: string;
+    /**
+     *
      * @type {string}
      * @memberof Item
      */
     description?: string;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Item
      */
-    thumbnail: object;
+    thumbnail: string;
     /**
-     * 
+     *
      * @type {Array<object>}
      * @memberof Item
      */
     promoimages?: Array<object>;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Item
      */
     itemcategories?: object;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Item
      */

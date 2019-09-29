@@ -15,59 +15,64 @@
 
 
 /**
- * 
+ *
  * @export
  * @interface Seller
  */
 export interface Seller {
     /**
-     * 
+     *
      * @type {string}
      * @memberof Seller
      */
     id: string;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Seller
      */
     title: string;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Seller
      */
-    logo: object;
+    logo: string;
     /**
-     * 
+     *
      * @type {Array<object>}
      * @memberof Seller
      */
-    promoImages: Array<object>;
+    promoImages: Array<string>;
     /**
-     * 
+     *
      * @type {object}
      * @memberof Seller
      */
     primarycategory?: object;
     /**
-     * 
+     *
      * @type {Array<object>}
      * @memberof Seller
      */
     sellerpoints?: Array<object>;
     /**
-     * 
+     *
      * @type {Array<object>}
      * @memberof Seller
      */
     items?: Array<object>;
     /**
-     * 
+     *
      * @type {string}
      * @memberof Seller
      */
     description?: string;
+
+    rating: {
+        value: number;
+        votes: string;
+    }
 }
 
 

@@ -70,6 +70,11 @@
 		<string>RussianRailG-Reg.otf</string>
 		<string>RussianRailGPro-Extended.otf</string>
 		<string>RussianRailGPro-ExtendedBold.otf</string>
+		<string>RussianRailG-Reg.ttf</string>
+		<string>RussianRailGPro-Bold.ttf</string>
+		<string>RussianRailGPro-Extended.ttf</string>
+		<string>RussianRailGPro-ExtendedBold.ttf</string>
+		<string>RussianRailGPro-Medium.ttf</string>
 	</array>
 </dict>
 </plist>

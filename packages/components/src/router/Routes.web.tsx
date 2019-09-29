@@ -6,6 +6,7 @@ import {RouteTicketsScreen} from '../screens/routetickets';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import {RouteProps} from 'react-router';
 import "./style.css";
+import {ElementsScreen} from '../screens/elements';
 
 const AnimatedSwitch = (props: { animationClassName: string, animationTimeout: number, children: JSX.Element[] }) => (
     <Route render={({ location }) => (
@@ -39,7 +40,9 @@ export const Routes = () => {
                       animationTimeout={300}>
         <AnimatedRoute exact path="/" component={RouteTicketsScreen} />
         <AnimatedRoute exact path="/route" component={RouteScreen} />
-        {/*<Route*/}
+      <AnimatedRoute exact path="/elements" component={ElementsScreen} />
+
+          {/*<Route*/}
           {/*exact*/}
           {/*path="/workout/:year/:month/:day"*/}
           {/*component={CurrentWorkout}*/}
