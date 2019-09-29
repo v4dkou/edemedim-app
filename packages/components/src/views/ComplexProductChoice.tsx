@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity
 } from "react-native";
+import {routing} from '../router/Routes';
 
 
 interface ComplexProductSelectProps {
@@ -119,6 +120,7 @@ export default class ComplexProductChoice extends Component<ComplexProductChoice
   };
 
   makeOrder = () => this.setState({ ordered: true });
+  stopOrder = () => this.setState({ ordered: false });
 
   render() {
     const textOpacity = !this.state.ordered ? 1 : 0.5;
@@ -126,7 +128,7 @@ export default class ComplexProductChoice extends Component<ComplexProductChoice
     return (
       <View style={styles.screenContainer}>
         <ImageBackground
-          source={this.props.product.image}
+          source={require('../../../../img/foodback.jpg')}
           style={{
             width: "100%",
             height: "100%"
@@ -174,22 +176,28 @@ export default class ComplexProductChoice extends Component<ComplexProductChoice
             {!!this.state.ordered && (
               <View style={styles.confirmButton}>
                 <View style={styles.optionsPopup}>
-                  <Text style={[styles.text, styles.buttonActiveText]}>
-                    новый заказ
-                  </Text>
+                  <TouchableOpacity onPress={() => routing().back()}>
+                    <Text style={[styles.text, styles.buttonActiveText]}>
+                      новый заказ
+                    </Text>
+                  </TouchableOpacity>
                   <View style={styles.optionsPopupDivider} />
-                  <Text style={[styles.text, styles.buttonActiveText]}>
-                    продолжить заказ
-                  </Text>
+                  <TouchableOpacity onPress={this.stopOrder}>
+                    <Text style={[styles.text, styles.buttonActiveText]}>
+                      продолжить заказ
+                    </Text>
+                  </TouchableOpacity>
                   <Image
                     style={styles.optionsPopupAnchor}
                     source={{ uri: "https://i.ibb.co/DkF0H79/Rectangle-3.png" }}
                   />
                 </View>
-                <Text style={[styles.text, styles.buttonOrderText]}>
-                  добавлено{" "}
-                  <Text style={styles.buttonActiveText}>в корзину</Text>
-                </Text>
+                <TouchableOpacity onPress={() => routing().toCartScreen()}>
+                  <Text style={[styles.text, styles.buttonOrderText]}>
+                    добавлено{" "}
+                    <Text style={styles.buttonActiveText}>в корзину</Text>
+                  </Text>
+                </TouchableOpacity>
               </View>
             )}
           </View>
@@ -204,7 +212,7 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   },
   faded: {
-    backgroundColor: "rgba(0, 0, 0, .5)",
+    backgroundColor: "rgba(0, 0, 0, .0)",
     paddingHorizontal: 15,
     paddingVertical: 10
   },
@@ -320,7 +328,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     marginTop: 35,
     position: "absolute",
-    bottom: "calc(100% - 10px)",
     left: 0,
     width: "100%",
     shadowColor: "#000",
@@ -339,7 +346,6 @@ const styles = StyleSheet.create({
     height: 20,
     position: "absolute",
     bottom: -10,
-    left: "calc(50% - 10px)",
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 5 },
     shadowOpacity: 0.1,

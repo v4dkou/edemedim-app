@@ -77,6 +77,8 @@ export const routing = (history?: any) => {
         navigator.push('PaymentScreen')
     };
 
+    const back = () => navigator.pop()
+
     return {
         toRouteTicketsScreen,
         toRouteScreen,
@@ -85,6 +87,7 @@ export const routing = (history?: any) => {
         toComplexItemScreen,
         toComplexItemsScreen,
         toCartScreen,
-        toPaymentScreen
+        toPaymentScreen,
+        back
     }
 }
