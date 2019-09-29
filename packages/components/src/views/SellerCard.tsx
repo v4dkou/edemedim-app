@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import { Rating } from "react-native-ratings";
 import {Seller} from '../models';
 
 
@@ -24,6 +23,7 @@ export default class SellerCard extends Component<SellerCardProps> {
           </Text>
 
           <View style={styles.ratingBlock}>
+            <Image source={require('../../../../img/rating.png')} style={{height: 24, width: 144}}/>
             {/*<Rating*/}
               {/*type="custom"*/}
               {/*ratingColor="#394A58"*/}
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     borderRadius: 20,
     overflow: "hidden",
-    backgroundColor: "#fff"
+    backgroundColor: "#F2F2F2"
   },
   vendorDesription: {
     paddingHorizontal: 10

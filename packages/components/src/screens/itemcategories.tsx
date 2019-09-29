@@ -8,7 +8,7 @@ export const ComplexCategoryItem = (props: {onPress: () => any, title: string, s
         <Text style={{fontFamily: "RussianRailGPro-Extended", fontSize: 24, marginBottom: 12, color: '#E21A1A', opacity: props.disabled ? 0.5 : 1, flex: 1 }}>
             {props.title}
         </Text>
-        <Text style={{fontFamily: "RussianRailGPro-Extended", fontSize: 14, marginBottom: 12, color: '#000000', opacity: props.disabled ? 0.7 : 1 }}>
+        <Text style={{fontFamily: "RussianRailGPro-Extended", fontSize: 14, marginTop: 8, marginBottom: 12, color: '#000000', opacity: props.disabled ? 0.7 : 1 }}>
             {props.subtitle}
         </Text>
     </View>
