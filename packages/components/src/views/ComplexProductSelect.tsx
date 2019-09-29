@@ -133,7 +133,7 @@ export default class ComplexProductSelect extends Component<ComplexProductSelect
                         </TouchableOpacity>
 
                         <View style={styles.selector}>
-                            {this.props.options.map((_, i:any) => (
+                            {this.props.options.map((_: any, i:any) => (
                                 <TouchableOpacity key={i} onPress={() => this.onSetSelected(i)}>
                                     <View
                                         style={[

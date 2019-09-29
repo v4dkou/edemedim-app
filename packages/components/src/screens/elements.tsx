@@ -189,7 +189,7 @@ export const ElementsScreen = observer(({ history }) => {
 
 
                         <View style={{ marginBottom: 30 }}>
-                            <ComplexProductSelect options={complexProducts} />
+                            <ComplexProductSelect options={complexProducts} onSelected={() => null}/>
                         </View>
                         <View style={{ marginBottom: 30 }}>
                             <ComplexProductChoice product={complexProducts[0]} />

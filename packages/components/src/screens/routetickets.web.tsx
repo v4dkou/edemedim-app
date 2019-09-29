@@ -29,6 +29,7 @@ const RouteTicketsList = observer(({history}) => {
     useEffect(() => {
         getUser()
     }, [])
+    console.error('AAAAAAAAAAAAAa');
     return <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}>

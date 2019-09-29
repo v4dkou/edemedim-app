@@ -1,10 +1,17 @@
 import {cast, getEnv, Instance, types} from "mobx-state-tree";
 import {Environment} from '../app/environment';
 import {Routeticket, UsersPermissionsUser} from '../models';
+import frozenContentStoreModel from '../utils/content-store/frozen-content-store';
 
 const RouteStoreModel =
     types.model({
+        isLoading: types.maybe(types.boolean),
         email: types.maybe(types.string),
+        username: types.maybe(types.string),
+        routeTickets: types.array(types.model({
+          id: types.string
+        })),
+        loginError: types.maybe(types.string)
     })
         .volatile(self => ({
             env: getEnv(self) as Environment

@@ -1,7 +1,8 @@
 import React, {Component} from "react";
-import {Image, StyleSheet, Text, View} from "react-native";
+import {Image, StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {Item, Orderitem, Routestoporder, RoutestoporderStatusEnum, Seller} from '../models';
 import {PointitemDisplay} from './PointitemCard';
+import {routing} from '../router/Routes';
 
 export interface SectionDisplay {
     name: string,
@@ -178,9 +179,9 @@ export default class CartItem extends Component<CartItemProps> {
                 </Text>
               </View>
             </View>
-            <View style={styles.payButton}>
-              <Text style={styles.payButtonText}>перейти к оплате</Text>
-            </View>
+                <View style={styles.payButton}>
+                  <Text style={styles.payButtonText}>перейти к оплате</Text>
+                </View>
           </View>
         )}
       </View>
