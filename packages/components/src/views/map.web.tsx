@@ -2,6 +2,19 @@ import React from 'react';
 // @ts-ignore
 import DG from '2gis-maps';
 
+interface RoutestopDisplay {
+    id: string,
+    name: string,
+    enabled: boolean,
+    coords: [number, number],
+    time: string,
+}
+
+interface RouteDisplay {
+    stations: RoutestopDisplay[],
+    routePoints: [number, number][]
+}
+
 export class RouteMap extends React.Component {
     public componentDidMount() {
         let map: any;
@@ -14,44 +27,44 @@ export class RouteMap extends React.Component {
                 fullscreenControl: false
             });
 
-            const route = {
+            const route: RouteDisplay = {
                 stations: [
-                    {name: 'Новосиб Гл', enabled: true, coords: [55.0358039, 82.8958949]},
-                    {name: 'Чулымская', enabled: false, coords: [55.0973892, 80.9714896]},
-                    {name: 'Барабинск', enabled: true, coords: [55.3556508, 78.3507305]},
-                    {name: 'Оз Карачин', enabled: false, coords: [55.3341081, 76.9431221]},
-                    {name: 'Татарская', enabled: false, coords: [55.2147545, 75.9566865]},
-                    {name: 'Омск Пасс', enabled: true, coords: [54.9396614, 73.3859985]},
-                    {name: 'Ишим', enabled: true, coords: [56.1126631, 69.5128538]},
-                    {name: 'Тюмень', enabled: true, coords: [57.1451952, 65.5225611]},
-                    {name: 'Екатеринб П', enabled: true, coords: [56.8598705, 60.5920263]},
-                    {name: 'Дружинино', enabled: false, coords: [56.7909452, 59.5176265]},
-                    {name: 'Красноуфим', enabled: false, coords: [56.5973882, 57.7612075]},
-                    {name: 'Чернушка', enabled: false, coords: [56.4976769, 56.0791166]},
-                    {name: 'Янаул', enabled: false, coords: [56.2716497, 54.9294332]},
-                    {name: 'Сарапул', enabled: true, coords: [56.4512561, 53.7808535]},
-                    {name: 'Агрыз', enabled: false, coords: [56.5249233, 53.0135636]},
-                    {name: 'Можга', enabled: true, coords: [56.4451269, 52.2044173]},
-                    {name: 'Вят Поляны', enabled: false, coords: [56.2292327, 51.0338763]},
-                    {name: 'Казань', enabled: true, coords: [55.8425026, 49.080706]},
-                    {name: 'Новосиб Гл', enabled: true, coords: [55.0358039, 82.8958949]},
-                    {name: 'Чулымская', enabled: false, coords: [55.0973892, 80.9714896]},
-                    {name: 'Барабинск', enabled: true, coords: [55.3556508, 78.3507305]},
-                    {name: 'Оз Карачин', enabled: false, coords: [55.3341081, 76.9431221]},
-                    {name: 'Татарская', enabled: false, coords: [55.2147545, 75.9566865]},
-                    {name: 'Омск Пасс', enabled: true, coords: [54.9396614, 73.3859985]},
-                    {name: 'Ишим', enabled: true, coords: [56.1126631, 69.5128538]},
-                    {name: 'Тюмень', enabled: true, coords: [57.1451952, 65.5225611]},
-                    {name: 'Екатеринб П', enabled: true, coords: [56.8598705, 60.5920263]},
-                    {name: 'Дружинино', enabled: false, coords: [56.7909452, 59.5176265]},
-                    {name: 'Красноуфим', enabled: false, coords: [56.5973882, 57.7612075]},
-                    {name: 'Чернушка', enabled: false, coords: [56.4976769, 56.0791166]},
-                    {name: 'Янаул', enabled: false, coords: [56.2716497, 54.9294332]},
-                    {name: 'Сарапул', enabled: true, coords: [56.4512561, 53.7808535]},
-                    {name: 'Агрыз', enabled: false, coords: [56.5249233, 53.0135636]},
-                    {name: 'Можга', enabled: true, coords: [56.4451269, 52.2044173]},
-                    {name: 'Вят Поляны', enabled: false, coords: [56.2292327, 51.0338763]},
-                    {name: 'Казань', enabled: true, coords: [55.8425026, 49.080706]}
+                    {id: '1', name:'Новосиб Гл', time:'', enabled: true, coords: [55.0358039, 82.8958949]},
+                    {id: '2', name:'Чулымская', time:'', enabled: false, coords: [55.0973892, 80.9714896]},
+                    {id: '3', name:'Барабинск', time:'', enabled: true, coords: [55.3556508, 78.3507305]},
+                    {id: '4', name:'Оз Карачин', time:'', enabled: false, coords: [55.3341081, 76.9431221]},
+                    {id: '5', name:'Татарская', time:'', enabled: false, coords: [55.2147545, 75.9566865]},
+                    {id: '6', name:'Омск Пасс', time:'', enabled: true, coords: [54.9396614, 73.3859985]},
+                    {id: '7', name:'Ишим', time:'', enabled: true, coords: [56.1126631, 69.5128538]},
+                    {id: '8', name:'Тюмень', time:'', enabled: true, coords: [57.1451952, 65.5225611]},
+                    {id: '9', name:'Екатеринб П', time:'', enabled: true, coords: [56.8598705, 60.5920263]},
+                    {id: '10', name:'Дружинино', time:'', enabled: false, coords: [56.7909452, 59.5176265]},
+                    {id: '11', name:'Красноуфим', time:'', enabled: false, coords: [56.5973882, 57.7612075]},
+                    {id: '12', name:'Чернушка', time:'', enabled: false, coords: [56.4976769, 56.0791166]},
+                    {id: '13', name:'Янаул', time:'', enabled: false, coords: [56.2716497, 54.9294332]},
+                    {id: '14', name:'Сарапул', time:'', enabled: true, coords: [56.4512561, 53.7808535]},
+                    {id: '15', name:'Агрыз', time:'', enabled: false, coords: [56.5249233, 53.0135636]},
+                    {id: '16', name:'Можга', time:'', enabled: true, coords: [56.4451269, 52.2044173]},
+                    {id: '17', name:'Вят Поляны', time:'', enabled: false, coords: [56.2292327, 51.0338763]},
+                    {id: '18', name:'Казань', time:'', enabled: true, coords: [55.8425026, 49.080706]},
+                    {id: '19', name:'Новосиб Гл', time:'', enabled: true, coords: [55.0358039, 82.8958949]},
+                    {id: '20', name:'Чулымская', time:'', enabled: false, coords: [55.0973892, 80.9714896]},
+                    {id: '21', name:'Барабинск', time:'', enabled: true, coords: [55.3556508, 78.3507305]},
+                    {id: '22', name:'Оз Карачин', time:'', enabled: false, coords: [55.3341081, 76.9431221]},
+                    {id: '23', name:'Татарская', time:'', enabled: false, coords: [55.2147545, 75.9566865]},
+                    {id: '24', name:'Омск Пасс', time:'', enabled: true, coords: [54.9396614, 73.3859985]},
+                    {id: '25', name:'Ишим', time:'', enabled: true, coords: [56.1126631, 69.5128538]},
+                    {id: '26', name:'Тюмень', time:'', enabled: true, coords: [57.1451952, 65.5225611]},
+                    {id: '27', name:'Екатеринб П', time:'', enabled: true, coords: [56.8598705, 60.5920263]},
+                    {id: '28', name:'Дружинино', time:'', enabled: false, coords: [56.7909452, 59.5176265]},
+                    {id: '29', name:'Красноуфим', time:'', enabled: false, coords: [56.5973882, 57.7612075]},
+                    {id: '30', name:'Чернушка', time:'', enabled: false, coords: [56.4976769, 56.0791166]},
+                    {id: '31', name:'Янаул', time:'', enabled: false, coords: [56.2716497, 54.9294332]},
+                    {id: '32', name:'Сарапул', time:'', enabled: true, coords: [56.4512561, 53.7808535]},
+                    {id: '33', name:'Агрыз', time:'', enabled: false, coords: [56.5249233, 53.0135636]},
+                    {id: '34', name:'Можга', time:'', enabled: true, coords: [56.4451269, 52.2044173]},
+                    {id: '35', name:'Вят Поляны', time:'', enabled: false, coords: [56.2292327, 51.0338763]},
+                    {id: '36', name:'Казань', time:'', enabled: true, coords: [55.8425026, 49.080706]}
                 ],
                 routePoints: [
                     [55.8436775,49.075365],
@@ -312,11 +325,12 @@ export class RouteMap extends React.Component {
                 const width = station.name.length * fontSize - 5;
 
                 DG.circle(station.coords, radius, {color, weight: 3, label: station.name, fill:true, fillColor: '#ffffff', fillOpacity: 1}).addTo(map);
+
                 const label = DG.divIcon({
                     className,
                     iconSize: [width, height],
                     iconAnchor: [50, 40],
-                    html: '<span style="color:'+ color +'; font-size:'+ fontSize + 'px; font-weight: bold; line-height: ' + height + 'px">'+station.name+'</span>'
+                    html: '<span style="color:'+ color +'; font-size:'+ fontSize + 'px; text-align: center; font-family: RussoOne-Regular; line-height: ' + height + 'px">'+station.name+'<br/>'+station.time+'</span>'
                 });
                 DG.marker(station.coords, {
                     icon: label

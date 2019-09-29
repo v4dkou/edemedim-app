@@ -3,8 +3,9 @@ import BottomSheet from 'reanimated-bottom-sheet'
 import {observer} from 'mobx-react';
 import React, {useEffect, useRef} from 'react';
 import {RouteMap} from '../views/map';
-import {StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, TouchableWithoutFeedback, View} from 'react-native';
 import {gestureHandlerRootHOC} from "react-native-gesture-handler";
+import {ItemCategoriesScreen} from './itemcategories';
 
 const RouteSheet = (props: {onHeaderPress: () => any} ) => <View style={styles.sheetContainer}>
     <TouchableWithoutFeedback
@@ -15,10 +16,7 @@ const RouteSheet = (props: {onHeaderPress: () => any} ) => <View style={styles.s
             <View style={styles.headerBar}/>
         </View>
     </TouchableWithoutFeedback>
-    <Text style={styles.sectionTitle}>Новосибирск – Казань</Text>
-    <Text style={styles.sectionDescription}>
-        Нет заказов
-    </Text>
+    <ItemCategoriesScreen />
 </View>
 
 const _RouteScreen = observer(() => {
@@ -28,15 +26,18 @@ const _RouteScreen = observer(() => {
         bottomSheet.current!.snapTo(1)
     }
     return (
-        <View style={styles.container}>
-            <RouteMap/>
-            <BottomSheet
-                ref={bottomSheet}
-                initialSnap = {1}
-                snapPoints = {['50%', 50]}
-                renderContent = {() => <RouteSheet onHeaderPress={openHalfpoint}/>}
-            />
-        </View>
+        <>
+            <StatusBar barStyle="dark-content" translucent backgroundColor="#f3f3f366" />
+            <View style={styles.container}>
+                <RouteMap/>
+                <BottomSheet
+                    ref={bottomSheet}
+                    initialSnap = {1}
+                    snapPoints = {['50%', 50]}
+                    renderContent = {() => <RouteSheet onHeaderPress={openHalfpoint}/>}
+                />
+            </View>
+        </>
     );
 })
 export const RouteScreen = gestureHandlerRootHOC(_RouteScreen)
@@ -73,7 +74,8 @@ const styles = StyleSheet.create({
     headerBar: {
         borderRadius: 4,
         height: 6,
-        margin: 20,
+        marginTop: 20,
+        marginBottom: 10,
         width: 85,
         opacity: 0.5,
         overflow: 'hidden',

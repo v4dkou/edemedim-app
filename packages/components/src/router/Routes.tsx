@@ -3,6 +3,13 @@ import { RouteScreen } from "../screens/route";
 // @ts-ignore
 import Navigator from 'react-native-easy-router';
 import {RouteTicketsScreen} from '../screens/routetickets';
+import { SellerScreen } from "../screens/seller";
+import { SellersScreen } from "../screens/sellers";
+import { ComplexItemScreen } from "../screens/complexitem";
+import { ComplexItemsScreen } from "../screens/complexitems";
+import { CartScreen } from "../screens/cart";
+import { PaymentScreen } from "../screens/payment";
+
 
 let navigator: any | undefined;
 
@@ -22,7 +29,7 @@ const backHandler = (navigator: Navigator) => {
 // Map screen should always be the first, so that it's always initialized in the background for fluid UI.
 export const Routes = () =>
     <Navigator
-        screens={{ RouteTicketsScreen, RouteScreen }}
+        screens={{ RouteTicketsScreen, RouteScreen, SellerScreen, SellersScreen, ComplexItemScreen, ComplexItemsScreen, CartScreen, PaymentScreen }}
         initialStack={['RouteScreen', 'RouteTicketsScreen']}
         navigatorRef={(ref: any) => {
             navigator = ref
@@ -51,8 +58,33 @@ export const routing = (history?: any) => {
         // navigator.popTo('RouteScreen', {animation: 'left', duration: 250, easing: 'ease-out'})
     }
 
+    const toSellerScreen = () => {
+        navigator.push('SellerScreen')
+    }
+    const toSellersScreen = () => {
+        navigator.push('SellersScreen')
+    };
+    const toComplexItemScreen = () => {
+        navigator.push('ComplexItemScreen')
+    };
+    const toComplexItemsScreen = () => {
+        navigator.push('ComplexItemsScreen')
+    };
+    const toCartScreen = () => {
+        navigator.push('CartScreen')
+    };
+    const toPaymentScreen = () => {
+        navigator.push('PaymentScreen')
+    };
+
     return {
         toRouteTicketsScreen,
-        toRouteScreen
+        toRouteScreen,
+        toSellerScreen,
+        toSellersScreen,
+        toComplexItemScreen,
+        toComplexItemsScreen,
+        toCartScreen,
+        toPaymentScreen
     }
 }

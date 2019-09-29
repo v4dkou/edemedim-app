@@ -63,8 +63,33 @@ export const routing = (history?: any) => {
 
     const toRouteScreen = (routeId: string) => history.push('/route')
 
+    const toSellerScreen = () => {
+        history.push('/seller')
+    }
+    const toSellersScreen = () => {
+        history.push('/sellers')
+    };
+    const toComplexItemScreen = () => {
+        history.push('/complex')
+    };
+    const toComplexItemsScreen = () => {
+        history.push('/complex')
+    };
+    const toCartScreen = () => {
+        history.push('/cart')
+    };
+    const toPaymentScreen = () => {
+        history.push('/payment')
+    };
+
     return {
         toRouteTicketsScreen,
-        toRouteScreen
+        toRouteScreen,
+        toSellerScreen,
+        toSellersScreen,
+        toComplexItemScreen,
+        toComplexItemsScreen,
+        toCartScreen,
+        toPaymentScreen
     }
 }
